@@ -77,6 +77,16 @@ The unit and integrations tests are placed under `src\test\scala` as a standard 
 
 ![Run unit test](src/site/markdown/run-unit-test.png)
 
+### Command-line
+
+If you are a command-line warrior, then [install Maven](https://maven.apache.org/install.html) and use the following commands to
+
+- Compile: `mvn clean compile`.
+- Run Spark App: `mvn scala:run -DmainClass="com.mydataproduct.example.WordCountBareDFApp"`.
+- Run all tests: `mvn test`.
+- Run a single test:
+  `mvn scalatest:test -DwildcardSuites=com.mydataproduct.example.DeltaSmokeTest -DtestName="can write and read a Delta table"`.
+
 ## Build Project
 
 You can build the JAR file for any of the following target platforms/runtimes by using the `runtime` property. For e.g., `mvn -Druntime=fabric20 package` builds the jar file that is ready to be deployed to [Fabric Runtime 2.0](https://learn.microsoft.com/en-us/fabric/data-engineering/runtime-2-0). By default, the runtime is set to `fabric13`.
@@ -101,18 +111,11 @@ You can build the JAR file for any of the following target platforms/runtimes by
 
 ### Command-line
 
-If you are a command-line warrior, then [install Maven](https://maven.apache.org/install.html) and use the following commands to
-
-- Compile: `mvn clean compile`
-- Run Spark App: `mvn scala:run -DmainClass="com.mydataproduct.example.WordCountBareDFApp"`
-- Run all tests: `mvn test`
-- Run a single test:
-  `mvn scalatest:test -DwildcardSuites=com.mydataproduct.example.DeltaSmokeTest -DtestName="can write and read a Delta table"`
-- Build Uber jar (to be deployed to Fabric Runtime 1.3 as SJD): `mvn clean package`
-- Skip Tests: `mvn install -DskipTests`
-- all: `mvn clean install`
-- Build Uber jar for Fabric Runtime 2.0: `mvn clean package -Druntime=fabric20`
-- Build Uber jar for Databricks RTS 18.0: `mvn clean package -Druntime=databricks180`
+- Build Uber jar (to be deployed to Fabric Runtime 1.3 as SJD): `mvn clean package`.
+- Build but skip tests: `mvn install -DskipTests`.
+- All: `mvn clean install` (Packages for Fabric Runtime 1.3 by default).
+- Build Uber jar for Fabric Runtime 2.0: `mvn clean package -Druntime=fabric20`.
+- Build Uber jar for Databricks RTS 18.0: `mvn clean package -Druntime=databricks180`.
 
 ### Successful Build
 
