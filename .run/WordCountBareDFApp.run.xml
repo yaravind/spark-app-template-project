@@ -1,6 +1,5 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="WordCountBareDFApp" type="Application" factoryName="Application">
-    <option name="INCLUDE_PROVIDED_SCOPE" value="true" />
     <option name="MAIN_CLASS_NAME" value="com.mydataproduct.example.WordCountBareDFApp" />
     <module name="spark-app-template-project" />
     <method v="2">
