@@ -1,19 +1,6 @@
 # spark-app-template-project
 
-Maven template project for coding Spark Apps using Scala/Java that can be deployed to the following runtimes.
-
-You can build for any of the following target platforms by using the `runtime` property.
-For e.g., `mvn -Druntime=fabric20 package` builds the jar file that is ready to be deployed to [Fabric Runtime 2.0](https://learn.microsoft.com/en-us/fabric/data-engineering/runtime-2-0).
-
-> By default, the runtime is set to `fabric13`.
-
-
-| `-Druntime=`    | Compatible versions                                 |
-| --------------- | --------------------------------------------------- |
-| `fabric13`      | Spark 3.5.5 / Delta 3.2.0 / Scala 2.12.18 / Java 11 |
-| `fabric20`      | Spark 4.0.0 / Delta 4.0.0 / Scala 2.13.16 / Java 21 |
-| `databricks180` | Spark 4.0.0 / Delta 4.0.1 / Scala 2.13.16 / Java 21 |
-| `synapse34`     | Spark 3.4.1 / Delta 2.4.0 / Scala 2.12.17 / Java 11 |
+Maven template project for coding Spark Apps using Scala/Java that can be deployed to the following runtimes. Using this template, you can develop the spark code for any of the following target platforms/runtimes.
 
 ## Running Spark Apps
 
@@ -73,9 +60,22 @@ The unit and integrations tests are placed under `src\test\scala` as a standard 
 
 ![Run unit test](src/site/markdown/run-unit-test.png)
 
-#### Build the JAR
+### Build
 
-1. Select the Maven icon from the right panel
+You can build the JAR file for any of the following target platforms/runtimes by using the `runtime` property. For e.g., `mvn -Druntime=fabric20 package` builds the jar file that is ready to be deployed to [Fabric Runtime 2.0](https://learn.microsoft.com/en-us/fabric/data-engineering/runtime-2-0). By default, the runtime is set to `fabric13`.
+
+> NOTE: Currently, This project is only tested for Fabric 1.3 runtime.
+
+| `-Druntime=`    | Compatible versions                                 |
+| --------------- | --------------------------------------------------- |
+| `fabric13`      | Spark 3.5.5 / Delta 3.2.0 / Scala 2.12.18 / Java 11 |
+| `fabric20`      | Spark 4.0.0 / Delta 4.0.0 / Scala 2.13.16 / Java 21 |
+| `databricks180` | Spark 4.0.0 / Delta 4.0.1 / Scala 2.13.16 / Java 21 |
+| `synapse34`     | Spark 3.4.1 / Delta 2.4.0 / Scala 2.12.17 / Java 11 |
+
+#### IDE
+
+1. Select the Maven icon from the right panel.
 2. Select `install` under the `Lifecycle`
 3. Click the `Run\Play` button.
 4. It will compile, test and build the Uber JAR `spark-app-template-project-1.0.0-SNAPSHOT-all.jar` under `target` folder.
