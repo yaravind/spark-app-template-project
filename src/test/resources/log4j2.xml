@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+  <Appenders>
+    <Console name="Console" target="SYSTEM_OUT">
+      <PatternLayout pattern="%d{HH:mm:ss.SSS} %-5level [%t] %c{1.} - %msg%n" />
+    </Console>
+  </Appenders>
+
+  <Loggers>
+    <!-- Emit our application's DEBUG logs during mvn verify -->
+    <Logger name="com.mydataproduct.example" level="debug" additivity="false">
+      <AppenderRef ref="Console" />
+    </Logger>
+
+    <!-- Reduce noise from Spark/Hadoop while still emitting our own DEBUG logs -->
+    <Logger name="org.apache.spark" level="info" additivity="false">
+      <AppenderRef ref="Console" />
+    </Logger>
+    <Logger name="org.sparkproject" level="warn" additivity="false">
+      <AppenderRef ref="Console" />
+    </Logger>
+    <Logger name="org.apache.hadoop" level="warn" additivity="false">
+      <AppenderRef ref="Console" />
+    </Logger>
+    <Logger name="io.delta" level="info" additivity="false">
+      <AppenderRef ref="Console" />
+    </Logger>
+
+    <Root level="info">
+      <AppenderRef ref="Console" />
+    </Root>
+  </Loggers>
+</Configuration>

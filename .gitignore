@@ -1,0 +1,82 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# The ordering is important: ignore .idea/* first, then re-include the shareable paths with !.
+
+# IntelliJ / JetBrains project files: ignore workspace/user-specific but allow shared project config
+.idea/*
+# keep shared project settings (un-ignore specific folders/files)
+!.idea/inspectionProfiles
+!.idea/inspectionProfiles/*
+!.idea/codeStyles
+!.idea/codeStyles/*
+!.idea/runConfigurations
+!.idea/runConfigurations/*
+!.idea/modules.xml
+!.idea/vcs.xml
+
+# workspace / user-specific files that should remain ignored
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/usage.statistics.xml
+.idea/dictionaries/
+*.iml
+
+
+# Editor directories and files
+*.iws
+*.iml
+*.ipr
+
+# Vim swap files
+*.swp
+
+# Maven / Java / Scala
+/target/
+*.class
+*.war
+*.jar
+*.nar
+*.ear
+dependency-reduced-pom.xml
+release.properties
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+settings.xml
+
+# Maven wrapper (keep wrapper jar in repo if desired) - ignore only the generated wrapper logs
+.mvn/wrapper/maven-wrapper.log
+
+# Test reports and build output
+/surefire-reports/
+/failsafe-reports/
+/test-classes/
+/reports/
+coverage/
+
+# Logs and temp files
+*.log
+logs/
+tmp/
+temp/
+.cache/
+
+# Scala tooling / Metals
+.metals/
+.history/
+
+# OS generated files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Secrets and environment
+.env
+.env.*
+*.key
+*.pem
+*.secret
