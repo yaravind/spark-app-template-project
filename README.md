@@ -2,7 +2,24 @@
 
 Maven template project for coding Spark Apps using Scala/Java that can be deployed to the following runtimes. Using this template, you can develop the spark code for any of the following target platforms/runtimes.
 
-## Running Spark Apps
+## Open the Project
+
+1. Clone (or download) from https://github.com/yaravind/spark-app-template-project: `git clone https://github.com/yaravind/spark-app-template-project.git`.
+2. Open the IntelliJ IDE.
+3. Select `Open` from the Welcome dialog.
+![Open project](open-project1.png)
+4. Select `pom.xml` from the folder where you have cloned (step 1).
+![Select pom](open-project2.png)
+5. Select `Open as Project`.
+![Open as project](open-project3.png)
+6. Click `Setup Scala SDK`. You need to set up the SDK once per project.
+![Open project](scala-sdk-setup.png)
+7. Select the Scala version: `2.12.17` or `2.12.18`.
+![Open project](scala-sdk-select-version.png)
+
+You are all set. It will take few minutes for the IDE to download all required dependencies to build and run the project.
+
+## Run Spark Apps
 
 ### IDE
 
@@ -60,7 +77,7 @@ The unit and integrations tests are placed under `src\test\scala` as a standard 
 
 ![Run unit test](src/site/markdown/run-unit-test.png)
 
-### Build
+## Build Project
 
 You can build the JAR file for any of the following target platforms/runtimes by using the `runtime` property. For e.g., `mvn -Druntime=fabric20 package` builds the jar file that is ready to be deployed to [Fabric Runtime 2.0](https://learn.microsoft.com/en-us/fabric/data-engineering/runtime-2-0). By default, the runtime is set to `fabric13`.
 
@@ -73,7 +90,7 @@ You can build the JAR file for any of the following target platforms/runtimes by
 | `databricks180` | Spark 4.0.0 / Delta 4.0.1 / Scala 2.13.16 / Java 21 |
 | `synapse34`     | Spark 3.4.1 / Delta 2.4.0 / Scala 2.12.17 / Java 11 |
 
-#### IDE
+### IDE
 
 1. Select the Maven icon from the right panel.
 2. Select `install` under the `Lifecycle`
@@ -96,3 +113,9 @@ If you are a command-line warrior, then [install Maven](https://maven.apache.org
 - all: `mvn clean install`
 - Build Uber jar for Fabric Runtime 2.0: `mvn clean package -Druntime=fabric20`
 - Build Uber jar for Databricks RTS 18.0: `mvn clean package -Druntime=databricks180`
+
+### Successful Build
+
+A successful build should show something like the following
+
+![successful build](src/site/markdown/successful-build.png)
